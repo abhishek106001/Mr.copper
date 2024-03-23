@@ -1,6 +1,61 @@
+1)
 #include <stdio.h>
 void main () {
     int x=2, y=-1, z=2;
     int a= x && y && z++;
     printf("%d",a);
 }  //output = 1
+2)
+class HackerEarth {
+    public static void main(String[] args) {
+        int sum = 0;
+        int a = 3;
+        while (sum++ < 3)
+    {
+        int b = (1+2*sum) %3;
+        switch(b)
+        {
+            default:
+            case 0:
+                a -= 1;
+                break;
+            case 1:
+                a += 5;
+        }
+    }
+    System.out.println(a);
+    }
+}  //output = 6
+3)
+Algorithm(x, k)
+    y = x    
+    while y != nil do
+        if key[y] = k then
+            return y
+        else if key[y] < k then
+            y = right[y]
+        else
+            y = left[y]
+    
+    return "NOT FOUND"
+//   O(log n) in the average and best cases, and O(n) in the worst case.
+// Output is O(n) [Timecomplexity AI is used]
+4)
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> ar = new ArrayList<>();
+        ar.add(10);
+        ar.add(20);
+        ar.add(30);
+        ar.remove(0);
+        ar.remove(1);
+        ar.add(20);
+
+        Iterator<Integer> i = ar.iterator();
+        while (i.hasNext()) {
+            int ab = i.next();
+            System.out.print(ab + " ");
+        }
+    }
+}//  output 20
+// Output not in Option
