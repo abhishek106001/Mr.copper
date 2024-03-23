@@ -1,0 +1,6 @@
+#include <stdio.h>
+void main () {
+    int x=2, y=-1, z=2;
+    int a= x && y && z++;
+    printf("%d",a);
+}  //output = 1
