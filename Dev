@@ -1,0 +1,303 @@
+Mavel repository
+-apachepoi -> jarv fie download -> 
+project -> right click -> properties -> class path -> add external jarvs
+download folder -> select -> close.
+
+
+import java.util.Scanner;
+
+class UserInputExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input for name
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+
+        // Get user input for username
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+
+        // Get user input for height
+        System.out.print("Enter height (in cm): ");
+        int height = scanner.nextInt();
+
+        // Get user input for weight
+        System.out.print("Enter weight (in kg): ");
+        int weight = scanner.nextInt();
+
+        // Create a User object with the provided input
+        User user = new User(name, username, height, weight);
+
+        // Display the user details
+        System.out.println("\nUser Details:");
+        System.out.println("Name: " + user.getName());
+        System.out.println("Username: " + user.getUsername());
+        System.out.println("Height: " + user.getHeight() + " cm");
+        System.out.println("Weight: " + user.getWeight() + " kg");
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    static class User {
+        private String name;
+        private String username;
+        private int height;
+        private int weight;
+
+        public User(String name, String username, int height, int weight) {
+            this.name = name;
+            this.username = username;
+            this.height = height;
+            this.weight = weight;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getUsername() {
+            return username;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+    }
+}
+
+
+public class FoodItem {
+    private String name;
+    private int calorie;
+    private int servingSize;
+
+    public FoodItem(String name, int calorie, int servingSize) {
+        this.name = name;
+        this.calorie = calorie;
+        this.servingSize = servingSize;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCalorie() {
+        return calorie;
+    }
+
+    public int getServingSize() {
+        return servingSize;
+    }
+}
+
+
+
+
+
+
+
+import java.util.*;
+
+public class FoodManagement {
+    private Map<String, FoodItem> foodItems = new HashMap<>();
+
+    public FoodManagement() {}
+
+    public void addFoodItem(FoodItem foodItem) {
+        foodItems.put(foodItem.getName(), foodItem);
+    }
+
+    public void removeFoodItem(String name) {
+        foodItems.remove(name);
+    }
+
+    public List<FoodItem> getAllFoodItems() {
+        return new ArrayList<>(foodItems.values());
+    }
+
+    public FoodItem getFoodItem(String name) {
+        return foodItems.get(name);
+    }
+}
+
+
+import java.util.*;
+
+public class Meal {
+    private String name;
+    private List<FoodItem> foodItems = new ArrayList<>();
+    private int totalCalorieIntake = 0;
+
+    public Meal(String name) {
+        this.name = name;
+    }
+
+    public void addFoodItem(FoodItem foodItem) {
+        foodItems.add(foodItem);
+        totalCalorieIntake += foodItem.getCalorie();
+    }
+
+    public void removeFoodItem(FoodItem foodItem) {
+        foodItems.remove(foodItem);
+        totalCalorieIntake -= foodItem.getCalorie();
+    }
+
+    public int getTotalCalorieIntake() {
+        return totalCalorieIntake;
+    }
+
+    public List<FoodItem> getFoodItems() {
+        return foodItems;
+    }
+}
+
+
+public class Logout {
+    private User user;
+
+    public Logout(User user) {
+        this.user = user;
+        // Implement logout logic here if needed
+    }
+}
+
+
+
+
+
+1) Reverse a String 
+
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        String reversed = new StringBuilder(str).reverse().toString();
+        System.out.println("Original String: " + str);
+        System.out.println("Reversed String: " + reversed);
+    }
+}
+
+
+2) Swap two numbers
+
+public class SwapNumbers { 
+ 
+public static void main(String[] args) { 
+ int a = 10; 
+ int b = 20; 
+ 
+    System.out.println("a is " + a + " and b is " + b); 
+ 
+ a = a + b; 
+ b = a - b; 
+ a = a - b; 
+ 
+    System.out.println("After swapping, a is " + a + " and b is " + b); 
+    } 
+ 
+}
+
+3) Vowels
+
+public class main { 
+ 
+ public static void main(String[] args) { 
+  System.out.println(stringContainsVowels("Hello")); // true 
+  System.out.println(stringContainsVowels("TV")); // false 
+ } 
+ 
+ public static boolean stringContainsVowels(String input) { 
+  return input.toLowerCase().matches(".*[aeiou].*"); 
+ } 
+ 
+}
+
+
+4) Prime Number.
+
+public class Main { 
+ 
+ public static void main(String[] args) { 
+  System.out.println(isPrime(19)); // true 
+  System.out.println(isPrime(49)); // false 
+ } 
+ 
+ public static boolean isPrime(int n){
+     if (n == 0 || n==1){
+         return false;
+     }
+        if (n == 2 ){
+            return true;
+        }
+        
+        for (int i =2; i<n/2;i++){
+            if(n%i == 0){
+                return false;
+            }
+        } return true;
+ }
+ }
+
+5) Fibonnacci series 
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+    }
+
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+}
+
+
+
+
+6) Odd number.
+
+public static boolean onlyOddNumbers(List<Integer> list) { 
+ for (int i : list) { 
+  if (i % 2 == 0) 
+   return false; 
+ }  
+ 
+ return true; 
+}
+
+7) Palindrome 
+
+public class Main {
+    public static void main(String[] args) {
+        int num = 12321;
+        if (isPalindrome(num)) {
+            System.out.println(num + " is a palindrome.");
+        } else {
+            System.out.println(num + " is not a palindrome.");
+        }
+    }
+
+    public static boolean isPalindrome(int num) {
+        int reversed = 0;
+        int original = num;
+        while (num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+        return original == reversed;
+    }
+}
+
+
