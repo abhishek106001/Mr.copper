@@ -1,0 +1,32 @@
+class UserInputExample {
+    UserInputExample() { /* compiled code */ }
+
+    public static void main(java.lang.String[] args) { /* compiled code */ }
+
+    private static java.lang.String autocorrectMode(java.lang.String input) { /* compiled code */ }
+
+    private static double calculateBMI(int height, int weight) { /* compiled code */ }
+
+    private static void planBulkDiet() { /* compiled code */ }
+
+    private static void planCutDiet() { /* compiled code */ }
+
+    private static void planMaintainDiet() { /* compiled code */ }
+
+    static class User {
+        private java.lang.String name;
+        private java.lang.String username;
+        private int height;
+        private int weight;
+
+        public User(java.lang.String name, java.lang.String username, int height, int weight) { /* compiled code */ }
+
+        public java.lang.String getName() { /* compiled code */ }
+
+        public java.lang.String getUsername() { /* compiled code */ }
+
+        public int getHeight() { /* compiled code */ }
+
+        public int getWeight() { /* compiled code */ }
+    }
+}
